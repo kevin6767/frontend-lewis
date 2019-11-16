@@ -5,12 +5,17 @@ import { About } from './components/About';
 import { Shop } from './components/Shop';
 import { NoMatch } from './components/NoMatch';
 import { Layout } from './components/Layout';
+import { NavigationBar } from './components/NavigationBar';
+import { Jumbotron } from './components/Jumbotron';
 
 function App() {
   return (
     <React.Fragment>
-    <Layout> 
     <Router>
+    <NavigationBar />
+    <Jumbotron />
+    <Layout> 
+    
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
@@ -18,8 +23,9 @@ function App() {
         <Route component={NoMatch} />
 
       </Switch>
+      </Layout>
     </Router>
-    </Layout>
+    
     </React.Fragment>
   );
 }
